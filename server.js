@@ -26,8 +26,9 @@ MongoClient.connect(uri,(err,client) => {
     db = client.db('teste-bd')
 
 //permite servidor se comunicar com o navegador
-    app.listen(3000, () => {
-        console.log('o nosso servidor está rodando na porta 3000')
+    const PORT = process.env.PORT || 5000
+    app.listen(PORT, () => {
+        console.log('o nosso servidor está rodando na porta' + PORT)
     })
 })
 
